@@ -1172,6 +1172,151 @@
         </div>
       </div>
 
+      <!-- ════ SCREEN: MY RIDES ════ -->
+      <div class="screen-view" id="sv-rides">
+        <div class="sbar"><span>9:41</span><span>···</span></div>
+        <div class="app-header">
+          <div class="app-wordmark">My Rides</div>
+        </div>
+
+        <!-- Tabs -->
+        <div style="display:flex;border-bottom:1px solid var(--navy-10);background:var(--white);">
+          <div id="mr-tab-going" onclick="mrTab('going')" style="flex:1;text-align:center;padding:0.55rem 0;font-family:'DM Mono',monospace;font-size:0.56rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--navy);cursor:pointer;">Going</div>
+          <div id="mr-tab-posted" onclick="mrTab('posted')" style="flex:1;text-align:center;padding:0.55rem 0;font-family:'DM Mono',monospace;font-size:0.56rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy-40);border-bottom:2px solid transparent;cursor:pointer;">Posted</div>
+        </div>
+
+        <!-- Going list -->
+        <div id="mr-going" class="ride-list" style="padding-bottom:70px;">
+          <div class="rcard" onclick="openDetail(1)">
+            <div class="rcard-accent" style="background:#2a8a4a;"></div>
+            <div class="rcard-body">
+              <div class="rcard-title">Adur Valley Ramble</div>
+              <div class="rcard-meta">Sun 9:30 · 45km · 3h · Weekly</div>
+              <div class="rcard-tags">
+                <span class="dtag dtag-gravel">Gravel</span>
+                <span class="vtag">No-Drop Social</span>
+              </div>
+            </div>
+            <div style="font-family:'DM Mono',monospace;font-size:0.52rem;color:var(--navy-40);margin-top:0.15rem;">Going</div>
+          </div>
+          <div class="rcard" onclick="openDetail(2)">
+            <div class="rcard-accent" style="background:#c08030;"></div>
+            <div class="rcard-body">
+              <div class="rcard-title">Sunday Coffee Loop</div>
+              <div class="rcard-meta">Sun 10:00 · 30km · 2h · Weekly</div>
+              <div class="rcard-tags">
+                <span class="dtag dtag-road">Road</span>
+                <span class="vtag">Coffee & Chat</span>
+              </div>
+            </div>
+            <div style="font-family:'DM Mono',monospace;font-size:0.52rem;color:var(--navy-40);margin-top:0.15rem;">Going</div>
+          </div>
+        </div>
+
+        <!-- Posted list (hidden by default) -->
+        <div id="mr-posted" class="ride-list" style="display:none;padding-bottom:70px;">
+          <div class="rcard" onclick="openDetail(1)">
+            <div class="rcard-accent" style="background:#2a8a4a;"></div>
+            <div class="rcard-body">
+              <div class="rcard-title">Adur Valley Ramble</div>
+              <div class="rcard-meta">Sun 9:30 · 45km · 3h · Weekly</div>
+              <div class="rcard-tags">
+                <span class="dtag dtag-gravel">Gravel</span>
+                <span class="vtag">No-Drop Social</span>
+              </div>
+            </div>
+            <div style="font-family:'DM Mono',monospace;font-size:0.52rem;color:var(--pink);margin-top:0.15rem;">3 going</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ SCREEN: PROFILE ════ -->
+      <div class="screen-view" id="sv-profile">
+        <div class="sbar"><span>9:41</span><span>···</span></div>
+
+        <!-- Profile hero -->
+        <div style="background:var(--navy);padding:1rem 1rem 1.2rem;">
+          <!-- Avatar -->
+          <div style="width:54px;height:54px;border-radius:50%;background:var(--pink);display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',sans-serif;font-size:1.1rem;color:var(--navy);margin-bottom:0.7rem;border:3px solid rgba(255,255,255,0.15);">AL</div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:1.1rem;color:var(--cream);letter-spacing:-0.02em;margin-bottom:0.1rem;">Big Red Al</div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.55rem;color:rgba(248,243,234,0.4);margin-bottom:0.7rem;">@bigredal · Shoreham-by-Sea</div>
+
+          <!-- Stats row -->
+          <div style="display:flex;gap:0.5rem;">
+            <div style="flex:1;background:rgba(255,255,255,0.07);border-radius:8px;padding:0.45rem;text-align:center;">
+              <div style="font-family:'Archivo Black',sans-serif;font-size:1rem;color:var(--cream);">12</div>
+              <div style="font-family:'DM Mono',monospace;font-size:0.42rem;color:rgba(248,243,234,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.05rem;">Rides posted</div>
+            </div>
+            <div style="flex:1;background:rgba(255,255,255,0.07);border-radius:8px;padding:0.45rem;text-align:center;">
+              <div style="font-family:'Archivo Black',sans-serif;font-size:1rem;color:var(--cream);">34</div>
+              <div style="font-family:'DM Mono',monospace;font-size:0.42rem;color:rgba(248,243,234,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.05rem;">Rides joined</div>
+            </div>
+            <div style="flex:1;background:rgba(255,255,255,0.07);border-radius:8px;padding:0.45rem;text-align:center;">
+              <div style="font-family:'Archivo Black',sans-serif;font-size:1rem;color:var(--pink);">8</div>
+              <div style="font-family:'DM Mono',monospace;font-size:0.42rem;color:rgba(248,243,234,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.05rem;">Following</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Disciplines -->
+        <div style="padding:0.8rem 1rem 0;">
+          <div style="font-family:'DM Mono',monospace;font-size:0.5rem;color:var(--navy-40);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:0.45rem;">My disciplines</div>
+          <div style="display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:0.8rem;">
+            <span class="dtag dtag-road" style="padding:0.2rem 0.55rem;font-size:0.58rem;">Road</span>
+            <span class="dtag dtag-gravel" style="padding:0.2rem 0.55rem;font-size:0.58rem;">Gravel</span>
+            <span class="dtag dtag-mtb" style="padding:0.2rem 0.55rem;font-size:0.58rem;">MTB</span>
+          </div>
+        </div>
+
+        <!-- Preferred vibes -->
+        <div style="padding:0 1rem 0.8rem;">
+          <div style="font-family:'DM Mono',monospace;font-size:0.5rem;color:var(--navy-40);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:0.45rem;">Preferred vibes</div>
+          <div style="display:flex;gap:0.35rem;flex-wrap:wrap;">
+            <span style="font-size:0.58rem;padding:0.2rem 0.55rem;border-radius:20px;background:var(--blush);color:var(--navy);font-family:'DM Mono',monospace;">No-Drop Social</span>
+            <span style="font-size:0.58rem;padding:0.2rem 0.55rem;border-radius:20px;background:var(--blush);color:var(--navy);font-family:'DM Mono',monospace;">Steady Burn</span>
+            <span style="font-size:0.58rem;padding:0.2rem 0.55rem;border-radius:20px;background:var(--blush);color:var(--navy);font-family:'DM Mono',monospace;">Adventure</span>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div style="height:1px;background:var(--navy-10);margin:0 1rem;"></div>
+
+        <!-- Recent activity -->
+        <div style="padding:0.8rem 1rem 0;">
+          <div style="font-family:'DM Mono',monospace;font-size:0.5rem;color:var(--navy-40);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:0.5rem;">Recent activity</div>
+
+          <div style="display:flex;flex-direction:column;gap:0.45rem;padding-bottom:70px;">
+            <div style="display:flex;align-items:center;gap:0.6rem;padding:0.5rem 0;border-bottom:1px solid var(--navy-10);">
+              <div style="width:28px;height:28px;border-radius:7px;background:var(--blush);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="14" r="3" stroke="#0B1957" stroke-width="1.4"/><circle cx="14" cy="14" r="3" stroke="#0B1957" stroke-width="1.4"/><path d="M7 14L9 8H12L14 14" stroke="#0B1957" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 8L10 5L13 6" stroke="#0B1957" stroke-width="1.4" stroke-linecap="round"/></svg>
+              </div>
+              <div style="flex:1;min-width:0;">
+                <div style="font-size:0.7rem;font-weight:600;color:var(--navy);">Posted Adur Valley Ramble</div>
+                <div style="font-family:'DM Mono',monospace;font-size:0.52rem;color:var(--navy-40);">3 people going · Sun 9:30am</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.6rem;padding:0.5rem 0;border-bottom:1px solid var(--navy-10);">
+              <div style="width:28px;height:28px;border-radius:7px;background:rgba(250,158,188,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#FA9EBC" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#FA9EBC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="flex:1;min-width:0;">
+                <div style="font-size:0.7rem;font-weight:600;color:var(--navy);">RSVPd to Sunday Coffee Loop</div>
+                <div style="font-family:'DM Mono',monospace;font-size:0.52rem;color:var(--navy-40);">8 people going · Sun 10:00am</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.6rem;padding:0.5rem 0;border-bottom:1px solid var(--navy-10);">
+              <div style="width:28px;height:28px;border-radius:7px;background:rgba(11,25,87,0.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M10 3v4M10 13v4M3 10h4M13 10h4" stroke="#0B1957" stroke-width="1.4" stroke-linecap="round"/><circle cx="10" cy="10" r="3" stroke="#0B1957" stroke-width="1.4"/></svg>
+              </div>
+              <div style="flex:1;min-width:0;">
+                <div style="font-size:0.7rem;font-weight:600;color:var(--navy);">Following Saturday Chaingang</div>
+                <div style="font-family:'DM Mono',monospace;font-size:0.52rem;color:var(--navy-40);">Weekly · Sat 8:00am</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Nav bar -->
       <div class="nav-bar">
         <div class="ni active" id="ni-home" onclick="goHome()">
@@ -1189,7 +1334,7 @@
           </svg>
           <div class="ni-label">My Rides</div>
         </div>
-        <div class="ni" id="ni-profile">
+        <div class="ni" id="ni-profile" onclick="showProfile()">
           <svg class="ni-icon" viewBox="0 0 20 20" fill="none">
             <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.4"/>
             <path d="M4 17C4 14.2 6.7 12 10 12s6 2.2 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
@@ -1329,7 +1474,19 @@
   }
 
   function postRide() { show('success'); }
-  function showMyRides() { updateNav('rides'); }
+  function showMyRides() { show('rides'); }
+  function showProfile() { show('profile'); }
+
+  function mrTab(tab) {
+    document.getElementById('mr-going').style.display = tab === 'going' ? 'flex' : 'none';
+    document.getElementById('mr-posted').style.display = tab === 'posted' ? 'flex' : 'none';
+    const going = document.getElementById('mr-tab-going');
+    const posted = document.getElementById('mr-tab-posted');
+    going.style.color = tab === 'going' ? 'var(--navy)' : 'var(--navy-40)';
+    going.style.borderBottom = tab === 'going' ? '2px solid var(--navy)' : '2px solid transparent';
+    posted.style.color = tab === 'posted' ? 'var(--navy)' : 'var(--navy-40)';
+    posted.style.borderBottom = tab === 'posted' ? '2px solid var(--navy)' : '2px solid transparent';
+  }
 
   function fcToggle(el, group) {
     el.closest('.chip-row').querySelectorAll('.fc').forEach(c => c.classList.remove('on','on-pink'));
@@ -1352,7 +1509,8 @@
   }
 
   function updateSteps() {
-    document.querySelectorAll('.fstep').forEach(s => s.classList.toggle('active', s.dataset.go === cur));
+    const mapped = cur === 'rides' ? 'rides' : cur === 'profile' ? 'profile' : cur;
+    document.querySelectorAll('.fstep').forEach(s => s.classList.toggle('active', s.dataset.go === mapped));
   }
 
   function updateNav(override) {
@@ -1360,6 +1518,7 @@
     document.querySelectorAll('.ni').forEach(n => n.classList.remove('active'));
     if (['home','detail','post','success'].includes(active)) document.getElementById('ni-home').classList.add('active');
     else if (active === 'rides') document.getElementById('ni-rides').classList.add('active');
+    else if (active === 'profile') document.getElementById('ni-profile').classList.add('active');
   }
 
   document.querySelectorAll('.fstep').forEach(s => {
