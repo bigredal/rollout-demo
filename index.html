@@ -10,9 +10,9 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --cream:#F4F0EB; --navy:#0B1957; --pink:#FA9EBC; --blush:#EED9D0;
-  --w:#ffffff; --n10:rgba(11,25,87,0.1); --n20:rgba(11,25,87,0.2);
-  --n40:rgba(11,25,87,0.4); --n60:rgba(11,25,87,0.6);
+  --cream:#F8F3EA; --navy:#0B1957; --pink:#FA9EBC; --blush:#EED9D0;
+  --w:#ffffff; --n8:rgba(11,25,87,0.08); --n10:rgba(11,25,87,0.1); --n12:rgba(11,25,87,0.12);
+  --n20:rgba(11,25,87,0.2); --n40:rgba(11,25,87,0.4); --n60:rgba(11,25,87,0.6);
 }
 body { font-family:'DM Sans',sans-serif; background:var(--navy); min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2rem 1rem 3rem; }
 
@@ -47,7 +47,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--navy); min-height:100v
 .mtbtn.on-pink { background:var(--pink); color:var(--navy); }
 
 /* Location bar */
-.loc-bar { margin:0.55rem 1rem; background:var(--w); border:1.5px solid var(--n10); border-radius:12px; padding:0.5rem 0.75rem; display:flex; align-items:center; gap:0.4rem; }
+.loc-bar { margin:0.55rem 1rem; background:var(--cream); border:1.5px solid var(--n10); border-radius:12px; padding:0.5rem 0.75rem; display:flex; align-items:center; gap:0.4rem; }
 .loc-bar-text { font-family:'DM Sans',sans-serif; font-size:0.7rem; color:var(--n60); flex:1; }
 .loc-bar-change { font-family:'DM Mono',monospace; font-size:0.5rem; color:var(--pink); text-transform:uppercase; letter-spacing:0.08em; cursor:pointer; }
 
@@ -73,20 +73,20 @@ body { font-family:'DM Sans',sans-serif; background:var(--navy); min-height:100v
 
 /* Ride cards — matches real app: vibe first, Archivo Black title */
 .ride-list { padding:0 1rem; display:flex; flex-direction:column; gap:0.5rem; padding-bottom:80px; }
-.rcard { background:var(--w); border-radius:16px; padding:0.75rem 0.8rem; cursor:pointer; transition:transform 0.15s; box-shadow:0 1px 4px rgba(11,25,87,0.06); border:1px solid var(--n10); }
+.rcard { background:var(--cream); border-radius:16px; padding:0.75rem 0.8rem; cursor:pointer; transition:transform 0.15s; box-shadow:0 1px 4px rgba(11,25,87,0.06); border:1px solid var(--n12); position:relative; }
 .rcard:active { transform:scale(0.98); }
 .rcard-vibe { display:inline-block; font-family:'DM Sans',sans-serif; font-size:0.62rem; font-weight:500; padding:0.22rem 0.65rem; border-radius:20px; background:var(--blush); color:var(--navy); margin-bottom:0.45rem; }
 .rcard-vibe.hammer { background:rgba(11,25,87,0.08); }
-.rcard-vibe.burn { background:rgba(250,100,60,0.1); }
-.rcard-vibe.skills { background:rgba(60,100,220,0.1); }
+.rcard-vibe.burn { background:var(--blush); }
+.rcard-vibe.skills { background:rgba(11,25,87,0.08); }
 .rcard-title { font-family:'Archivo Black',sans-serif; font-size:0.95rem; color:var(--navy); letter-spacing:-0.02em; line-height:1.1; margin-bottom:0.28rem; }
 .rcard-meta { font-family:'DM Mono',monospace; font-size:0.54rem; color:var(--n60); margin-bottom:0.4rem; }
 .rcard-bottom { display:flex; align-items:center; justify-content:space-between; padding-top:0.4rem; border-top:1px solid var(--n10); }
 .rcard-stats { font-family:'DM Mono',monospace; font-size:0.52rem; color:var(--n40); }
 .dtag { font-family:'DM Mono',monospace; font-size:0.5rem; font-weight:500; padding:0.1rem 0.4rem; border-radius:5px; letter-spacing:0.04em; }
-.dtag-road { background:#e8eeff; color:#1a3090; }
-.dtag-gravel { background:#fff2e0; color:#906020; }
-.dtag-mtb { background:#e8f6ec; color:#1a6030; }
+.dtag-road { background:rgba(11,25,87,0.08); color:rgba(11,25,87,0.55); }
+.dtag-gravel { background:rgba(11,25,87,0.08); color:rgba(11,25,87,0.55); }
+.dtag-mtb { background:rgba(11,25,87,0.08); color:rgba(11,25,87,0.55); }
 
 /* Detail */
 .detail-hero { background:var(--navy); padding:0.8rem 1rem 1rem; }
@@ -95,7 +95,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--navy); min-height:100v
 .detail-title { font-family:'Archivo Black',sans-serif; font-size:1.2rem; color:var(--cream); letter-spacing:-0.025em; line-height:1.1; margin-bottom:0.2rem; }
 .detail-by { font-family:'DM Mono',monospace; font-size:0.52rem; color:rgba(248,243,234,0.35); }
 .stat-strip { display:flex; gap:0.45rem; padding:0.65rem 1rem; }
-.sbox { flex:1; background:var(--w); border-radius:10px; padding:0.42rem 0.3rem; text-align:center; border:1px solid var(--n10); }
+.sbox { flex:1; background:var(--cream); border-radius:10px; padding:0.42rem 0.3rem; text-align:center; border:1px solid var(--n12); }
 .sval { font-family:'Archivo Black',sans-serif; font-size:0.88rem; color:var(--navy); letter-spacing:-0.02em; }
 .skey { font-family:'DM Mono',monospace; font-size:0.4rem; color:var(--n40); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.07rem; }
 .d-map { margin:0 1rem 0.65rem; height:82px; border-radius:12px; background:#ddd8cc; background-image:linear-gradient(rgba(11,25,87,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(11,25,87,0.03) 1px,transparent 1px); background-size:14px 14px; display:flex; align-items:center; justify-content:center; position:relative; border:1px solid var(--n10); }
@@ -154,20 +154,26 @@ body { font-family:'DM Sans',sans-serif; background:var(--navy); min-height:100v
 .link-copy { font-size:0.56rem; color:var(--pink); font-weight:600; cursor:pointer; font-family:'DM Sans',sans-serif; }
 
 /* My Rides tabs */
-.mr-tabs { display:flex; border-bottom:1px solid var(--n10); background:var(--w); }
+.mr-tabs { display:flex; border-bottom:1px solid var(--n10); background:var(--cream); }
 .mr-tab { flex:1; text-align:center; padding:0.52rem 0; font-family:'DM Mono',monospace; font-size:0.54rem; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; color:var(--n40); border-bottom:2px solid transparent; transition:all 0.15s; }
 .mr-tab.on { color:var(--navy); border-bottom-color:var(--navy); }
 
 /* Profile */
-.profile-hero { background:var(--navy); padding:1rem 1rem 1.1rem; }
-.profile-av { width:52px; height:52px; border-radius:50%; background:var(--pink); display:flex; align-items:center; justify-content:center; font-family:'Archivo Black',sans-serif; font-size:1rem; color:var(--navy); margin-bottom:0.65rem; border:3px solid rgba(255,255,255,0.12); }
-.profile-name { font-family:'Archivo Black',sans-serif; font-size:1.05rem; color:var(--cream); letter-spacing:-0.02em; margin-bottom:0.1rem; }
-.profile-handle { font-family:'DM Mono',monospace; font-size:0.52rem; color:rgba(248,243,234,0.38); margin-bottom:0.65rem; }
-.profile-stats { display:flex; gap:0.45rem; }
-.pstat { flex:1; background:rgba(255,255,255,0.07); border-radius:8px; padding:0.42rem; text-align:center; }
-.pstat-val { font-family:'Archivo Black',sans-serif; font-size:0.95rem; color:var(--cream); }
+.profile-cover { height:110px; background:var(--navy); position:relative; overflow:hidden; flex-shrink:0; }
+.profile-body { padding:0 1rem; background:var(--cream); }
+.profile-av-row { display:flex; align-items:flex-end; justify-content:space-between; margin-top:-26px; margin-bottom:0.5rem; }
+.profile-name { font-family:'Archivo Black',sans-serif; font-size:1.05rem; color:var(--navy); letter-spacing:-0.02em; margin-bottom:0.1rem; }
+.profile-handle { font-family:'DM Mono',monospace; font-size:0.52rem; color:var(--n40); margin-bottom:0.65rem; }
+.profile-stats { display:flex; gap:0.45rem; margin-bottom:0.5rem; }
+.pstat { flex:1; background:rgba(11,25,87,0.06); border-radius:8px; padding:0.42rem; text-align:center; }
+.pstat-val { font-family:'Archivo Black',sans-serif; font-size:0.95rem; color:var(--navy); }
 .pstat-val.pink { color:var(--pink); }
-.pstat-key { font-family:'DM Mono',monospace; font-size:0.4rem; color:rgba(248,243,234,0.38); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.04rem; }
+.pstat-key { font-family:'DM Mono',monospace; font-size:0.4rem; color:var(--n40); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.04rem; }
+/* RSVP button on cards */
+.rcard-rsvp { font-family:'DM Sans',sans-serif; font-size:0.58rem; font-weight:500; padding:0.18rem 0.55rem; border-radius:20px; border:1px solid var(--n12); color:rgba(11,25,87,0.55); cursor:pointer; transition:all 0.15s; background:transparent; display:inline-flex; align-items:center; gap:0.2rem; }
+.rcard-rsvp.on { background:var(--pink); border-color:var(--pink); color:var(--navy); font-weight:600; }
+/* Completed badge */
+.completed-badge { position:absolute; top:0.6rem; right:0.6rem; font-family:'DM Mono',monospace; font-size:0.42rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(11,25,87,0.5); background:var(--cream); border:1px solid var(--n12); padding:0.15rem 0.45rem; border-radius:20px; z-index:1; }
 .profile-sect { padding:0.75rem 1rem 0; }
 .profile-sect-lbl { font-family:'DM Mono',monospace; font-size:0.48rem; color:var(--n40); text-transform:uppercase; letter-spacing:0.14em; margin-bottom:0.42rem; }
 .activity-item { display:flex; align-items:center; gap:0.55rem; padding:0.48rem 0; border-bottom:1px solid var(--n10); }
@@ -176,13 +182,13 @@ body { font-family:'DM Sans',sans-serif; background:var(--navy); min-height:100v
 .activity-meta { font-family:'DM Mono',monospace; font-size:0.5rem; color:var(--n40); }
 
 /* Nav */
-.nav-bar { position:absolute; bottom:0; left:0; right:0; height:56px; background:var(--w); border-top:1px solid var(--n10); display:flex; align-items:center; justify-content:space-around; z-index:150; }
-.ni { display:flex; flex-direction:column; align-items:center; gap:3px; cursor:pointer; padding:0.2rem 1rem; border-radius:8px; transition:background 0.15s; position:relative; }
-.ni:active { background:var(--blush); }
+.nav-bar { position:absolute; bottom:0; left:0; right:0; height:56px; background:var(--navy); border-top:1px solid rgba(248,243,234,0.08); display:flex; align-items:center; justify-content:space-around; z-index:150; }
+.ni { display:flex; flex-direction:column; align-items:center; gap:3px; cursor:pointer; padding:0.2rem 1rem; border-radius:8px; transition:background 0.15s; position:relative; color:rgba(248,243,234,0.38); }
+.ni:active { background:rgba(255,255,255,0.08); }
 .ni-icon { width:20px; height:20px; }
-.ni-lbl { font-family:'DM Mono',monospace; font-size:0.44rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--n40); }
-.ni.active .ni-lbl { color:var(--navy); }
-.ni.active::after { content:''; position:absolute; bottom:-2px; left:50%; transform:translateX(-50%); width:5px; height:5px; border-radius:50%; background:var(--pink); }
+.ni-lbl { font-family:'DM Mono',monospace; font-size:0.44rem; letter-spacing:0.06em; text-transform:uppercase; color:inherit; }
+.ni.active { color:var(--pink); }
+.ni.active .ni-lbl { color:var(--pink); }
 
 /* Info panel */
 .info-panel { flex:1; max-width:370px; }
@@ -313,10 +319,10 @@ body { font-family:'DM Sans',sans-serif; background:var(--navy); min-height:100v
         </div>
         <div class="section-hdr">3 Rides near you</div>
         <div class="ride-list">
-          <div class="rcard" onclick="openDetail(0)"><div class="rcard-vibe">Coffee & Chat</div><div class="rcard-title">Big Al's Sunday Roll</div><div class="rcard-meta">Thu 30 Apr · 08:00 · Shoreham Tollbridge</div><div class="rcard-bottom"><div class="rcard-stats">2hr · 1 going</div><span class="dtag dtag-road">Road</span></div></div>
-          <div class="rcard" onclick="openDetail(1)"><div class="rcard-vibe burn">Steady Burn</div><div class="rcard-title">Once in a Lifetime</div><div class="rcard-meta">Sat 3 May · 07:30 · Shoreham Beach</div><div class="rcard-bottom"><div class="rcard-stats">3.5hr · 4 going</div><span class="dtag dtag-road">Road</span></div></div>
-          <div class="rcard" onclick="openDetail(2)"><div class="rcard-vibe">No-Drop Social</div><div class="rcard-title">Adur Valley Ramble</div><div class="rcard-meta">Sun 4 May · 09:30 · Shoreham Beach</div><div class="rcard-bottom"><div class="rcard-stats">3hr · 3 going</div><span class="dtag dtag-gravel">Gravel</span></div></div>
-          <div class="rcard" onclick="openDetail(3)"><div class="rcard-vibe hammer">Hammerfest</div><div class="rcard-title">Saturday Chaingang</div><div class="rcard-meta">Sat 3 May · 08:00 · Shoreham Tesco</div><div class="rcard-bottom"><div class="rcard-stats">3.5hr · 6 going</div><span class="dtag dtag-road">Road</span></div></div>
+          <div class="rcard" onclick="openDetail(0)"><div class="rcard-vibe">Coffee & Chat</div><div class="rcard-title">Big Al's Sunday Roll</div><div class="rcard-meta">Thu 30 Apr · 08:00 · Shoreham Tollbridge</div><div class="rcard-bottom"><div class="rcard-stats">2hr · 1 going</div><button class="rcard-rsvp" id="rsvp-card-0" onclick="toggleCardRsvp(event,this)">Going?</button><span class="dtag dtag-road">Road</span></div></div>
+          <div class="rcard" onclick="openDetail(1)"><div class="rcard-vibe burn">Steady Burn</div><div class="rcard-title">Once in a Lifetime</div><div class="rcard-meta">Sat 3 May · 07:30 · Shoreham Beach</div><div class="rcard-bottom"><div class="rcard-stats">3.5hr · 4 going</div><button class="rcard-rsvp" onclick="toggleCardRsvp(event,this)">Going?</button><span class="dtag dtag-road">Road</span></div></div>
+          <div class="rcard" onclick="openDetail(2)"><div class="rcard-vibe">No-Drop Social</div><div class="rcard-title">Adur Valley Ramble</div><div class="rcard-meta">Sun 4 May · 09:30 · Shoreham Beach</div><div class="rcard-bottom"><div class="rcard-stats">3hr · 3 going</div><button class="rcard-rsvp" onclick="toggleCardRsvp(event,this)">Going?</button><span class="dtag dtag-gravel">Gravel</span></div></div>
+          <div class="rcard" onclick="openDetail(3)"><div class="rcard-vibe hammer">Hammerfest</div><div class="rcard-title">Saturday Chaingang</div><div class="rcard-meta">Sat 3 May · 08:00 · Shoreham Tesco</div><div class="rcard-bottom"><div class="rcard-stats">3.5hr · 6 going</div><button class="rcard-rsvp" onclick="toggleCardRsvp(event,this)">Going?</button><span class="dtag dtag-road">Road</span></div></div>
         </div>
       </div>
 
@@ -441,8 +447,9 @@ body { font-family:'DM Sans',sans-serif; background:var(--navy); min-height:100v
         <div class="app-hdr"><div style="font-family:'Archivo Black',sans-serif;font-size:1.15rem;color:var(--cream);letter-spacing:-0.02em;">My Rides</div></div>
         <div class="mr-tabs"><div class="mr-tab on" id="mr-going-tab" onclick="mrTab('going')">Going</div><div class="mr-tab" id="mr-posted-tab" onclick="mrTab('posted')">Posted</div></div>
         <div id="mr-going" class="ride-list" style="padding-top:0.5rem;">
-          <div class="rcard" onclick="openDetail(0)"><div class="rcard-vibe">Coffee & Chat</div><div class="rcard-title">Big Al's Sunday Roll</div><div class="rcard-meta">Thu 30 Apr · 08:00 · Shoreham Tollbridge</div><div class="rcard-bottom"><div class="rcard-stats">2hr · 1 going</div><span class="dtag dtag-road">Road</span></div></div>
-          <div class="rcard" onclick="openDetail(2)"><div class="rcard-vibe">No-Drop Social</div><div class="rcard-title">Adur Valley Ramble</div><div class="rcard-meta">Sun 4 May · 09:30 · Shoreham Beach</div><div class="rcard-bottom"><div class="rcard-stats">3hr · 3 going</div><span class="dtag dtag-gravel">Gravel</span></div></div>
+          <div class="rcard" onclick="openDetail(0)"><div class="rcard-vibe">Coffee & Chat</div><div class="rcard-title">Big Al's Sunday Roll</div><div class="rcard-meta">Thu 30 Apr · 08:00 · Shoreham Tollbridge</div><div class="rcard-bottom"><div class="rcard-stats">2hr · 1 going</div><button class="rcard-rsvp on" onclick="toggleCardRsvp(event,this)">Going ✓</button><span class="dtag dtag-road">Road</span></div></div>
+          <div class="rcard" onclick="openDetail(2)"><div class="rcard-vibe">No-Drop Social</div><div class="rcard-title">Adur Valley Ramble</div><div class="rcard-meta">Sun 4 May · 09:30 · Shoreham Beach</div><div class="rcard-bottom"><div class="rcard-stats">3hr · 3 going</div><button class="rcard-rsvp on" onclick="toggleCardRsvp(event,this)">Going ✓</button><span class="dtag dtag-gravel">Gravel</span></div></div>
+          <div class="rcard" onclick="openDetail(1)" style="opacity:0.6;"><div class="completed-badge">Completed</div><div class="rcard-vibe burn">Steady Burn</div><div class="rcard-title">Once in a Lifetime</div><div class="rcard-meta">Sat 26 Apr · 07:30 · Shoreham Beach</div><div class="rcard-bottom"><div class="rcard-stats">3.5hr · 4 went</div><span class="dtag dtag-road">Road</span></div></div>
         </div>
         <div id="mr-posted" class="ride-list" style="display:none;padding-top:0.5rem;">
           <div class="rcard" onclick="openDetail(0)"><div class="rcard-vibe">Coffee & Chat</div><div class="rcard-title">Big Al's Sunday Roll</div><div class="rcard-meta">Thu 30 Apr · 08:00 · Shoreham Tollbridge</div><div class="rcard-bottom"><div class="rcard-stats">2hr · 1 going</div><span class="dtag dtag-road">Road</span></div></div>
@@ -451,10 +458,16 @@ body { font-family:'DM Sans',sans-serif; background:var(--navy); min-height:100v
 
       <!-- PROFILE -->
       <div class="sv" id="sv-profile">
-        <div class="sbar"><span>9:41</span><span>···</span></div>
-        <div class="profile-hero">
-          <!-- Profile photo — styled avatar -->
-          <img src="data:image/jpeg;base64,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" style="width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:center top;margin-bottom:0.65rem;border:3px solid rgba(255,255,255,0.15);display:block;"><div class="profile-name">Big Red Al</div><div class="profile-handle">@bigredal · Shoreham-by-Sea</div><div class="profile-stats"><div class="pstat"><div class="pstat-val">12</div><div class="pstat-key">Posted</div></div><div class="pstat"><div class="pstat-val">34</div><div class="pstat-key">Joined</div></div><div class="pstat"><div class="pstat-val pink">8</div><div class="pstat-key">Following</div></div></div></div>
+        <div class="sbar" style="background:var(--navy);color:rgba(248,243,234,0.7);"><span>9:41</span><span>···</span></div>
+        <!-- Cover photo placeholder -->
+        <div class="profile-cover">
+          <div style="position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(250,158,188,0.18);top:-50px;right:-30px;"></div>
+          <div style="position:absolute;width:100px;height:100px;border-radius:50%;background:rgba(250,158,188,0.12);bottom:-25px;left:20px;"></div>
+          <div style="position:absolute;width:65px;height:65px;border-radius:50%;background:rgba(248,243,234,0.06);top:15px;left:38%;"></div>
+        </div>
+        <div class="profile-body">
+          <div class="profile-av-row">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAB4AHgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD6CU8U7IxVK1vY7gfKTn3qznigCTeoppfPQ0wmlVcmgB4fFOWY09YQVqJ4tppXAmVjmsvXdYt7Er5siqTwMnvV4S7FP0rxz4g6hNd+II7d2IijG4L2J9aYj0vSdRe8unaGTMRAAI5Fb/2NZh83WvHfBGq3NjqqQJIxhkGSnYH1r1uO8YoCOuKTGmTfZjb/AHTxR5pHeoHupX7GmgyN2NSMs7s96crBetVhuHWhjnvTEXknjB5oqgqknrRRyhc5a/F3a2/nWa5OMgE07SfEOqfK+p2EFvaEN+9a4/e5H/TPHIPrmuI1z4nTSeJrHwvo7BI95Nxdhd7yKgJZYx0A4xu688Vk+OfE17Dab3ae28x9uQCCBgnit4UG3qQ6iSPStQ8d2tq/lxIu4nALms2TxveSNtRwuTjgAV8/6NYaz4k8QW9l/Zd5Ajgzm5uwygopGSDjnORivTtUT+yTCJZ8yzPtjTGM8E5+nFbRpQIcmWb/AONdzpV89u80GFJCmWcKW564IrrfDPxLbXrI3TW6bVcoQGB3YAOQR16+lfL/AIk8N67rWvErpFzMix4zI3lxhic5LZFewfD7w/c6D4Us7WYIspLyssbFlXcc4BPX60nCLdrDTaV7nuFrqVpfwNJDICVXLISNy/Uf1rzbxHY2etazujlxJHlSyngV5l48+IreFPGllDDLJHL5YBmjPKdBgjoVznINdpYaFNrFlaa9pOVh1FN7xqxxDICQQO+04yPTp2rGcLaopSvud34R8HW9q4uWmMshHcYxXaiBIxjArjPAdhrNlNKNSlZkyNgJzxXaT/McCsGaITzI14xSiYdkP5UR2uRuqQNs4C5pAQvvIzsIqsysT6VoM7OMbcVXkhbPWmmDQlvCzHrRUiI6Dg0U7iseQeF/Bv8Awg+lXmvajbzXusXQ2rb26l2jUnIjBHcnBY9sAdufPdd8GfEzxdq8lx/Z729tuV0juwiR7j945J3AABR/Subb9ofxTql8LWIvZ7wcZfJ6ZAwoWsK5+KHjS/klP9owqExncpJ647k13Rd3oYtWPpnw1oE2i6LFb6lc2Mt5jMrW8YjTOOACfmbA/ibk+w4riNd8L+JtZ1xL1o7HykLbUF2mFGMAD/H3rwm0+IXia4abzdUk3o2MLEmMd/4ataL4y1u7dvtetXaMFYqUCDnHHG3FFOaewSjZI9a0n4c+O9U1iJ9ZvLDT9JVt0kdlIJJJFH8AOOM9Cc16hNbCKI7Ix+7U7VUeg4Ar5f0/4ieLYndoNUd9mCN0a/0ArpdG/aH1zTroW2rWkNyoxllYqf1z/Okqik2uxTg0lLucp8X90uvxTkKz7VDcfMuOT9Mk/pXt3wd8ai28BzzuokOmpLmP+8oG8foT+VMg8Q/D74iW0N3rGkaS00h2K16nlsW9N4Iz9N1dho2j6PoNsV0fS7GxhfBP2ePAcdOTznj3qLWvfqF9rHR6b4sN442wkI4DKw6MDyDWwdWSPlyRXK2Eaw35SMBYtqsqgYCj0HtWrfwNPETHnPtXJ1sas34NTSUZDjFWBcoejAmuCX7RDkNIyU1NVurSUfvC49DWfOublL5Go8x3/mux9BTDOu7aW5rEs9ZkeDLIQcdqpXN1PMxkiJ3DopqiTqix7GiuTsPFi2u+O/xE69m6Ee1FFwsz4Xvree31WG5iilw2G3YJGRwatWySSSHJ2+ZwSeldN4h05bO/8pQsK+UpaFL0XIQ9wZBwT0OOcZ6+mYDbQ4zIufbmvSguq6nNJ9Csuii1uppEuEnEnOFXoe9EWkvHyARV5NUtYvuo7H34pH11/wDlnAn/AALJ/wAKFCMBuUpaD/Lkhh2QRIny4JySWrKOhvczl33FmPJrTjk1a8H7uMgdtqgCpYdD1S6cKA0jn+FcsRUurSju0X7Kq+jEs/B2nSKDd3CoD1BkxXbeFE0XQXCWvirU7IMNpWG5dkz/ALpBWsa28AalLCZM4bH3WXvXLzx6vb3Ulm9g7Oj+WVjRmzn6VCr05OyHKhUirs+pPh1qdz4h0WC8u5Ea7hLWtxtABLoxUtgdM4B/Guzm1OOwADjg+1eO/DS+l0Dw3btFBlr3Fw7Bt24kAD6dOnua6S48USzn99EwwK5akoqWhcYytqdBq+r280ikOqgmoRc2bKGLAmvIfFviK7e9QQGREB5Iptl4smt4lMxYnr1op4VT95yLnXcVypHvGnzpJHgY20l9ewaVA9xIw2jnk15Nb/E8QRBRuFXbvxhBr+mmFpCC4280Om4uxmpXVxniL4j6RqMkkG9CynBPaiuMb4ZwXZM0N1LGG565orH3itTy/XJYdPu5II453MUhRxIuwrjrx2PtWnY+Hnn/AHs8cqxY3fcOR9a9E+Nep+HdWttWlj0m3t/EcXlyG9CkSNtYZzjgkjuRngVH4Y1S/wDFfhxdVNzGNQuHPnykA/MDgnHr0qqmIk4pxZvQoLmtJHKW+gaezbfJkbHdlwK2bDwfbyOJIIQ659av3PhC4nu0nuNSuJ9oA8lSdrH19h7V0nhrTV0+c28YO0Y6nnP1rjnN73PVoU7u3KclfWIgcw+c0IXlgo5rR0PVrbTtQXSrfTZzdn5iZFyTxn1r0C/8LJc72RUBY7uQDUdjpFxptwJDaWztwPN74qVNW1KnRle6LemWNxcyxvdWzWspJBQ/xelUtc0ldM1xtTjty5hj3uEGMqOp/Ac11ltdCNPmYPz1x0qvrES3ckFysXmMrFXTdgFCpBB9u1Rzb2NVT7o8/wDhRHstdd0e4Y/8SvVJY4Vb+GJ/nUD25P512xsbeTIOK4fwXZT2fibxlduoS1utTzAN2TwuT+A3AfhXYbj1DH8671seHP4mVb3w7ZzHLRg/hVCTwlYSLjYvTHSt1LjHD/nUTZd/k7002RZHPP4K0/GAi/lRH4OslHCrW9Irx/eBFQmUjvTuwsMh0pIovLSQr+NFNFzIGxRSCx5N480y6fXLyUWdybe4TlipPUYNN+DXn2EWqaVco6tFKkyBgRuVgQSM9sqK+hTYQTjmND7EVkeJdAheOG+trWNZIAVkkHDeWece4yAfauH2vu8p6FOFqikzEkjSGPzWChQMmm6An2xnuMrCpOQWHb6d6o6reItrM0gfYq84OMn/AArk7nxBe7tmnyGCMLgA8/8A6qzPT9ooWZ7BqUM89uyxXMUO5Mq27rxwfxrC8PeILlwsF9HsYjPPQ/Q159pl48/l3VxI1xMNpzIc/kM1ujxGZ5IjcBNobClBytErdAjUT1PUVaCeHKgZFZHieSY6JqMdsw8z7LN5eOMNsOP1qnpmoOtuLiN98ecEHt+NR6rPa6k0OmXK74r5zG0Z/jRQXYfTC4P1oiE3ocn8F7G7vvA0eoTTieaeV22FhvCqAucd84JzXYZ2HHII6g1jazLb6Fq00FqEt42jjlWKMbVHy7eB2+6K1bPVrK/iDXsogm2g+azYDV60KftIqUep8nWxPsKsqVRbdSQsafHJsOR1pI3tJXK217bXOBkiNwSPqKlaNVHzcGolFx3NoVIz1iy5FJDep5bAA+lZt9YvatnkoehqN38ttynBHQitSxvEvozDNjdj86jY0MEkDrRVvUbIW0hAOVPQ0VQHaixa3gNzduttEOSzmuR8SeLYhG9vZr+6KkMz9XH07Vm69r9zeszTTySH1Y1y1xI13fJBuwAoZj6Dqa6KOChDV6s8uvmNSrpHRE2oxjVdNa3dzE7EOp/vY7VXtPCgt0jD3eB1J2A4/E/1rkNW8S3Oo+KoVsbgwWlkCSezADofqa7Xwt4hsfEMUkVwTHPH99ehx2I9q4cTh3TfNHY97L8aqyUanxfmX4dJ0WKVTNqEkjdAse1B+O0f1Fa8Ph3RZwfLs1cKOHZixJ+pNFpbaSmRKpccfefj8qt6jrmk6VaZR44Y1Htz/hXG5N6I9mSSV5WMeSGTRvNjRhHbZJ+bp9K5nwt4hu/Efj6d7dkOl6dC8CFojl2bAZlb3PGPRaz9en1nxwWjspJdNsCcJI6/vJh6ley+nc+1bXww8I3HhqOVr5o2uZTglGLAKCe57nr7cVskoQbe5wqUp1I2Xuof8QZ/N18Rg8pbxo36n+tZSozxqZZHK9lJz+ApNau11LWb29yvlNIVQ5/hHA/lVvRbdL5ftUxYxKxSNOx9TXsYaPLBJnymPqqdec13L2l6Ys8axugEGctk7VJ9z3rrtL0uKOMQwSSIv90zb0/I8r+BrMt74WyDAAC8DAFaFrrUhfBPyjpXTZPRnn80k7ofqemXNgQ7ruhY4Ei8jPofeqkUzRsGU4I711FvfpcW7RyRvKjDDJgEGsPVtHNkpubdy8ONxjb78Yzjn1HvXHWocusdj1MJjVP3Km/5kMtw1xjec0VUicuRtBY+gormPSOevrhmzz1NYOv6l/Zunyspxc32QPVIgOv44oor05HztNXZyOm25htJLllw8zcZ64/ziltUlimNwjujA8MpwRRRWLVzpUmndHXeG9TF/K1lf3Fwkp+aORXwHHoR6iteTSLaOXy3aQ56Fm6/iaKK8rERUajSPpcDJ1KSc9WbcNtHbQgKMtjgDmoNc1VtF0eQAkXd18ie2ep/Kiis6EVKokzbGzdOhKUTg7UHBtoyQ7fiPcmumsZnt4I4kUGNOAD6UUV7adj46ZrQypcWjEEqQfmB6inRyYcAdOpoorZGEjVsNRaPA8x1OOxxWhY6tHbamZppT5CQnezHOMkcUUVRk0X9OutOvdUjuILCe3gI2tI0WxCexHpRRRXBiKUea562DxM+Sz6H/9k=" style="width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--cream);display:block;"><div style="font-family:'DM Mono',monospace;font-size:0.5rem;color:var(--n40);padding:0.25rem 0.6rem;border-radius:20px;border:1px solid var(--n12);cursor:pointer;">Edit</div></div><div class="profile-name">Big Red Al</div><div class="profile-handle">@bigredal · Shoreham-by-Sea</div><div class="profile-stats"><div class="pstat"><div class="pstat-val">12</div><div class="pstat-key">Posted</div></div><div class="pstat"><div class="pstat-val">34</div><div class="pstat-key">Joined</div></div><div class="pstat"><div class="pstat-val pink">8</div><div class="pstat-key">Following</div></div></div></div>
         <div class="profile-sect"><div class="profile-sect-lbl">My disciplines</div><div style="display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:0.8rem;"><span class="dtag dtag-road" style="padding:0.2rem 0.55rem;font-size:0.58rem;">Road</span><span class="dtag dtag-gravel" style="padding:0.2rem 0.55rem;font-size:0.58rem;">Gravel</span><span class="dtag dtag-mtb" style="padding:0.2rem 0.55rem;font-size:0.58rem;">MTB</span></div></div>
         <div style="height:1px;background:var(--n10);margin:0 1rem;"></div>
         <div class="profile-sect" style="padding-bottom:80px;"><div class="profile-sect-lbl">Recent activity</div>
@@ -536,6 +549,7 @@ function pickPostVibe(el){document.querySelectorAll('.vibe-card').forEach(v=>v.c
 function pickDisc(el){document.querySelectorAll('.dchip').forEach(c=>c.classList.remove('on'));el.classList.add('on');}
 function pickVibe(el){document.querySelectorAll('.vopt').forEach(v=>v.classList.remove('on'));el.classList.add('on');}
 function pickTopt(el,g){el.closest('.trow').querySelectorAll('.topt').forEach(o=>o.classList.remove('on'));el.classList.add('on');}
+function toggleCardRsvp(e,btn){e.stopPropagation();btn.classList.toggle('on');btn.textContent=btn.classList.contains('on')?'Going ✓':'Going?';}
 function mrTab(tab){document.getElementById('mr-going').style.display=tab==='going'?'flex':'none';document.getElementById('mr-posted').style.display=tab==='posted'?'flex':'none';document.getElementById('mr-going-tab').classList.toggle('on',tab==='going');document.getElementById('mr-posted-tab').classList.toggle('on',tab==='posted');}
 function updateSteps(){document.querySelectorAll('.fstep').forEach(s=>s.classList.toggle('active',s.dataset.go===cur));}
 function updateNav(){document.querySelectorAll('.ni').forEach(n=>n.classList.remove('active'));if(['home','detail','post','success'].includes(cur))document.getElementById('ni-home').classList.add('active');else if(cur==='rides')document.getElementById('ni-rides').classList.add('active');else if(cur==='profile')document.getElementById('ni-profile').classList.add('active');}
