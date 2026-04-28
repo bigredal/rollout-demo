@@ -52,8 +52,9 @@ body { font-family:'DM Sans',sans-serif; background:var(--navy); min-height:100v
 .loc-bar-change { font-family:'DM Mono',monospace; font-size:0.5rem; color:var(--pink); text-transform:uppercase; letter-spacing:0.08em; cursor:pointer; }
 
 /* Map */
-.map-zone { margin:0 1rem 0.6rem; height:100px; border-radius:14px; background:#ddd8cc; background-image:linear-gradient(rgba(11,25,87,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(11,25,87,0.03) 1px,transparent 1px); background-size:20px 20px; position:relative; overflow:hidden; border:1px solid var(--n10); }
-.map-dot { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); }
+.map-zone { margin:0 1rem 0.6rem; height:110px; border-radius:14px; position:relative; overflow:hidden; border:1px solid var(--n10); background:#e8e0d0; }
+.map-zone svg.mapbg { position:absolute; inset:0; width:100%; height:100%; }
+.map-dot { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:4; }
 .map-dot-inner { width:10px; height:10px; border-radius:50%; background:var(--navy); border:2px solid white; box-shadow:0 0 0 5px rgba(11,25,87,0.18); }
 .mpin { position:absolute; transform:translate(-50%,-100%); cursor:pointer; z-index:3; transition:transform 0.15s; }
 .mpin:hover { transform:translate(-50%,-115%) scale(1.1); }
@@ -257,11 +258,47 @@ body { font-family:'DM Sans',sans-serif; background:var(--navy); min-height:100v
           <span class="loc-bar-change">Change</span>
         </div>
         <div class="map-zone">
+          <!-- SVG map — Shoreham-by-Sea style, Apple Maps aesthetic -->
+          <svg class="mapbg" viewBox="0 0 280 110" xmlns="http://www.w3.org/2000/svg">
+            <!-- Land base -->
+            <rect width="280" height="110" fill="#e8e0d0"/>
+            <!-- Water / sea at bottom -->
+            <path d="M0 75 Q40 70 80 73 Q120 76 160 72 Q200 68 240 71 Q260 72 280 70 L280 110 L0 110 Z" fill="#b8d4e8"/>
+            <!-- Water shimmer -->
+            <path d="M10 82 Q50 79 90 81" stroke="white" stroke-width="0.5" fill="none" opacity="0.5"/>
+            <path d="M30 88 Q70 85 110 87" stroke="white" stroke-width="0.5" fill="none" opacity="0.4"/>
+            <path d="M150 84 Q190 81 230 83" stroke="white" stroke-width="0.5" fill="none" opacity="0.5"/>
+            <!-- Green park/fields -->
+            <ellipse cx="50" cy="35" rx="28" ry="18" fill="#d4e8c8" opacity="0.8"/>
+            <ellipse cx="230" cy="25" rx="22" ry="14" fill="#d4e8c8" opacity="0.7"/>
+            <!-- Roads - main horizontal -->
+            <path d="M0 55 L280 55" stroke="white" stroke-width="4" opacity="0.9"/>
+            <path d="M0 55 L280 55" stroke="#f0e8d8" stroke-width="2" opacity="0.5"/>
+            <!-- Roads - secondary horizontal -->
+            <path d="M0 38 L280 38" stroke="white" stroke-width="2.5" opacity="0.7"/>
+            <!-- Roads - vertical -->
+            <path d="M95 0 L95 75" stroke="white" stroke-width="3" opacity="0.85"/>
+            <path d="M95 0 L95 75" stroke="#f0e8d8" stroke-width="1.5" opacity="0.4"/>
+            <path d="M185 0 L185 75" stroke="white" stroke-width="2.5" opacity="0.75"/>
+            <path d="M50 0 L50 75" stroke="white" stroke-width="2" opacity="0.6"/>
+            <path d="M145 0 L145 75" stroke="white" stroke-width="2" opacity="0.6"/>
+            <path d="M235 0 L235 75" stroke="white" stroke-width="2" opacity="0.6"/>
+            <!-- Diagonal road -->
+            <path d="M0 20 Q60 45 120 55 Q180 65 280 60" stroke="white" stroke-width="2.5" opacity="0.7" fill="none"/>
+            <!-- Buildings blocks -->
+            <rect x="105" y="42" width="12" height="8" rx="1" fill="#d4c8b8" opacity="0.8"/>
+            <rect x="120" y="44" width="8" height="6" rx="1" fill="#d4c8b8" opacity="0.7"/>
+            <rect x="155" y="40" width="14" height="10" rx="1" fill="#d4c8b8" opacity="0.8"/>
+            <rect x="172" y="43" width="9" height="7" rx="1" fill="#d4c8b8" opacity="0.7"/>
+            <rect x="60" y="43" width="10" height="7" rx="1" fill="#d4c8b8" opacity="0.7"/>
+            <rect x="200" y="41" width="12" height="9" rx="1" fill="#d4c8b8" opacity="0.8"/>
+            <!-- Shoreham label -->
+            <text x="118" y="66" font-family="'DM Mono',monospace" font-size="5" fill="#8a7a6a" letter-spacing="0.5" text-anchor="middle">SHOREHAM-BY-SEA</text>
+          </svg>
           <div class="map-dot"><div class="map-dot-inner"></div></div>
-          <svg class="mpin" onclick="openDetail(0)" width="15" height="20" viewBox="0 0 18 24"><path d="M9 0C4 0 0 4 0 9c0 6.7 9 15 9 15s9-8.3 9-15c0-5-4-9-9-9z" fill="#0B1957"/><circle cx="9" cy="9" r="4" fill="#FA9EBC"/></svg>
-          <svg class="mpin" onclick="openDetail(1)" width="15" height="20" viewBox="0 0 18 24"><path d="M9 0C4 0 0 4 0 9c0 6.7 9 15 9 15s9-8.3 9-15c0-5-4-9-9-9z" fill="#0B1957"/><circle cx="9" cy="9" r="4" fill="#FA9EBC"/></svg>
-          <svg class="mpin" onclick="openDetail(2)" width="15" height="20" viewBox="0 0 18 24"><path d="M9 0C4 0 0 4 0 9c0 6.7 9 15 9 15s9-8.3 9-15c0-5-4-9-9-9z" fill="#0B1957"/><circle cx="9" cy="9" r="4" fill="#FA9EBC"/></svg>
-          <div class="map-label">Shoreham-by-Sea area</div>
+          <svg class="mpin" onclick="openDetail(0)" width="15" height="20" viewBox="0 0 18 24" style="z-index:5;"><path d="M9 0C4 0 0 4 0 9c0 6.7 9 15 9 15s9-8.3 9-15c0-5-4-9-9-9z" fill="#0B1957"/><circle cx="9" cy="9" r="4" fill="#FA9EBC"/></svg>
+          <svg class="mpin" onclick="openDetail(1)" width="15" height="20" viewBox="0 0 18 24" style="z-index:5;"><path d="M9 0C4 0 0 4 0 9c0 6.7 9 15 9 15s9-8.3 9-15c0-5-4-9-9-9z" fill="#0B1957"/><circle cx="9" cy="9" r="4" fill="#FA9EBC"/></svg>
+          <svg class="mpin" onclick="openDetail(2)" width="15" height="20" viewBox="0 0 18 24" style="z-index:5;"><path d="M9 0C4 0 0 4 0 9c0 6.7 9 15 9 15s9-8.3 9-15c0-5-4-9-9-9z" fill="#0B1957"/><circle cx="9" cy="9" r="4" fill="#FA9EBC"/></svg>
         </div>
         <div class="filter-wrap">
           <div class="chip-row"><span class="fc on" onclick="fcToggle(this,'a')">All</span><span class="fc" onclick="fcToggle(this,'a')">Friends</span></div>
@@ -342,7 +379,24 @@ body { font-family:'DM Sans',sans-serif; background:var(--navy); min-height:100v
       <!-- PROFILE -->
       <div class="sv" id="sv-profile">
         <div class="sbar"><span>9:41</span><span>···</span></div>
-        <div class="profile-hero"><div class="profile-av">AL</div><div class="profile-name">Big Red Al</div><div class="profile-handle">@bigredal · Shoreham-by-Sea</div><div class="profile-stats"><div class="pstat"><div class="pstat-val">12</div><div class="pstat-key">Posted</div></div><div class="pstat"><div class="pstat-val">34</div><div class="pstat-key">Joined</div></div><div class="pstat"><div class="pstat-val pink">8</div><div class="pstat-key">Following</div></div></div></div>
+        <div class="profile-hero">
+          <!-- Profile photo — styled avatar -->
+          <div style="width:56px;height:56px;border-radius:50%;overflow:hidden;margin-bottom:0.65rem;border:3px solid rgba(255,255,255,0.15);flex-shrink:0;">
+            <svg width="56" height="56" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="56" fill="#FA9EBC"/>
+              <!-- Body -->
+              <ellipse cx="28" cy="38" rx="14" ry="10" fill="#0B1957" opacity="0.9"/>
+              <!-- Head -->
+              <circle cx="28" cy="22" r="9" fill="#FFDBD1"/>
+              <!-- Helmet -->
+              <path d="M19 21 Q19 12 28 12 Q37 12 37 21" fill="#0B1957"/>
+              <path d="M18 22 Q18 13 28 13 Q38 13 38 22" fill="none" stroke="#FA9EBC" stroke-width="1.5"/>
+              <!-- Face hint -->
+              <circle cx="25" cy="23" r="1.2" fill="#0B1957" opacity="0.5"/>
+              <circle cx="31" cy="23" r="1.2" fill="#0B1957" opacity="0.5"/>
+              <path d="M25 27 Q28 29 31 27" stroke="#0B1957" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+          </div><div class="profile-name">Big Red Al</div><div class="profile-handle">@bigredal · Shoreham-by-Sea</div><div class="profile-stats"><div class="pstat"><div class="pstat-val">12</div><div class="pstat-key">Posted</div></div><div class="pstat"><div class="pstat-val">34</div><div class="pstat-key">Joined</div></div><div class="pstat"><div class="pstat-val pink">8</div><div class="pstat-key">Following</div></div></div></div>
         <div class="profile-sect"><div class="profile-sect-lbl">My disciplines</div><div style="display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:0.8rem;"><span class="dtag dtag-road" style="padding:0.2rem 0.55rem;font-size:0.58rem;">Road</span><span class="dtag dtag-gravel" style="padding:0.2rem 0.55rem;font-size:0.58rem;">Gravel</span><span class="dtag dtag-mtb" style="padding:0.2rem 0.55rem;font-size:0.58rem;">MTB</span></div></div>
         <div style="height:1px;background:var(--n10);margin:0 1rem;"></div>
         <div class="profile-sect" style="padding-bottom:80px;"><div class="profile-sect-lbl">Recent activity</div>
